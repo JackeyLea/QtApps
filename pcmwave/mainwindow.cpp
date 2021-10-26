@@ -28,9 +28,9 @@ void MainWindow::drawWave()
     int length = this->length;
     if (length>0)
     {
-        int winterval = ceil(length/this->width()+0.5);
-        int halfHeight = this->height()>>1;
-        int hinterval = 32767/halfHeight;
+        int winterval = ceil(length/image.width()+0.5);
+        int halfHeight = image.height()>>1;
+        int hinterval = 600/halfHeight;
         int indexWave = 0;
         int yValue = 0;
         int yValue2 = 0;
@@ -79,7 +79,7 @@ void MainWindow::on_btnPlay_clicked()
     AVCodecParameters *pCodecPara=NULL;
     AVPacket *packet=av_packet_alloc(); // 分配AVPacket结构体
     AVFrame	*pFrame=av_frame_alloc();
-    char filename[]="test.mp3";
+    char filename[]="/home/jackey/Music/test.mp3";
 
     //支持网络流
     avformat_network_init();
@@ -141,14 +141,9 @@ void MainWindow::on_btnPlay_clicked()
             if(avcodec_send_packet(pCodecCtx,packet)>=0){
                 while(avcodec_receive_frame(pCodecCtx,pFrame)>=0){
                     uint8_t *ptr =pFrame->data[0];
-                    short val;
                     for (int i = 0; i < pFrame->linesize[0]; i += 1024)
                     {
-                        val = (short)(
-                                    ((unsigned char)ptr[i]) << 8 |
-                                    ((unsigned char)ptr[i+1])
-                                );
-                        vdata[length] = val;
+                        vdata[length] = ptr[i];
                         length++;
                     }
                 }
@@ -160,7 +155,6 @@ void MainWindow::on_btnPlay_clicked()
     avcodec_close(pCodecCtx);
     // Close the video file
     avformat_close_input(&pFormatCtx);
-    //avcodec_parameters_free(&pCodecPara);
     av_packet_free(&packet);
     av_frame_free(&pFrame);
     drawWave();
