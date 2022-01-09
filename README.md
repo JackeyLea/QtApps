@@ -7,3 +7,4 @@
 | FIR | QWidget | 五子棋 | |
 | pcmwave | QWidget | 显示音频波纹 |
 | pcmwave2 | QWT | 测试Qt/QWT的显示绘图能力 |
+| stardicter | c++ | stardict解析| 
