@@ -1,37 +1,43 @@
 #include "gaugecar.h"
+
 #include <QPainter>
-#include <QPainterPath>
 #include <QtMath>
+#include <QPainterPath>
 
 GaugeCar::GaugeCar(QWidget *parent)
     : QWidget(parent)
 {
-    outerCircleColor=QColor(80,80,80);
-    innerCircleColor=QColor(64,64,64);
+    outerCircleColor=QColor(0x50,0x50,0x50);
+    innerCircleColor=QColor(0x40,0x40,0x40);
+
     pieStyle = PieStyle_Three;
-    pointerStyle=PointerStyle_Circle;
-    pointerColor=QColor(0xfd,0x69,0x69);
-    startAngle=60;
-    endAngle=60;
     pieColorStart=QColor(0x17,0xbb,0x99);
     pieColorMid=QColor(0xd8,0xd8,0x00);
     pieColorEnd=QColor(0xfd,0x69,0x69);
-    coverCircleColor=QColor(100,100,100);
+    startAngle=60;
+    endAngle=60;
+
+    coverCircleColor=QColor(0x64,0x64,0x64);
+
     scaleMajor=10;
     scaleMinor=10;
-    scaleColor=QColor(255,255,255);
+    scaleColor=QColor(0xff,0xff,0xff);
+
     maxValue=100;
     minValue=0;
     precision=0;
+    pointerColor=QColor(0xfd,0x69,0x69);
+
     centerCircleColor=QColor(255,255,255);
+
     textColor=QColor(0,0,0);
+
     overlayColor=QColor(255,255,255);
     showOverlay=true;
 }
 
 GaugeCar::~GaugeCar()
-{
-}
+{}
 
 double GaugeCar::getMinValue() const
 {
@@ -338,7 +344,6 @@ void GaugeCar::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     painter.translate(width / 2, height / 2);
     painter.scale(side / 200.0, side / 200.0);
-
     //绘制外圆
     drawOuterCircle(&painter);
     //绘制内圆
@@ -658,3 +663,4 @@ void GaugeCar::drawOverlay(QPainter *painter)
 
     painter->restore();
 }
+

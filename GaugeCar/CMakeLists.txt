@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(QCWidget VERSION 0.1 LANGUAGES CXX)
+project(GaugeCar VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -16,12 +16,12 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-	gaugecar.cpp gaugecar.h
-	gaugepercent.h gaugepercent.cpp
+        gaugecar.cpp
+        gaugecar.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(QCWidget
+    qt_add_executable(GaugeCar
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
@@ -31,22 +31,22 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-	add_library(QCWidget SHARED
+        add_library(GaugeCar SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-	add_executable(QCWidget
+        add_executable(GaugeCar
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(QCWidget PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(GaugeCar PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-set_target_properties(QCWidget PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER feater.top
+set_target_properties(GaugeCar PROPERTIES
+    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
@@ -54,5 +54,5 @@ set_target_properties(QCWidget PROPERTIES
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(QCWidget)
+    qt_finalize_executable(GaugeCar)
 endif()

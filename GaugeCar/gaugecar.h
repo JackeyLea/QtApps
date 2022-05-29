@@ -18,40 +18,41 @@
 
 #include <QWidget>
 
-class GaugeCar : public QWidget{
+class GaugeCar : public QWidget
+{
     Q_OBJECT
 
-        Q_PROPERTY(double minValue READ getMinValue WRITE setMinValue CONSTANT)
-        Q_PROPERTY(double maxValue READ getMaxValue WRITE setMaxValue CONSTANT)
-        Q_PROPERTY(double value READ getValue WRITE setValue CONSTANT)
-        Q_PROPERTY(int precision READ getPrecision WRITE setPrecision CONSTANT)
+    Q_PROPERTY(double minValue READ getMinValue WRITE setMinValue CONSTANT)
+    Q_PROPERTY(double maxValue READ getMaxValue WRITE setMaxValue CONSTANT)
+    Q_PROPERTY(double value READ getValue WRITE setValue CONSTANT)
+    Q_PROPERTY(int precision READ getPrecision WRITE setPrecision CONSTANT)
 
-        Q_PROPERTY(int scaleMajor READ getScaleMajor WRITE setScaleMajor CONSTANT)
-        Q_PROPERTY(int scaleMinor READ getScaleMinor WRITE setScaleMinor CONSTANT)
-        Q_PROPERTY(int startAngle READ getStartAngle WRITE setStartAngle CONSTANT)
-        Q_PROPERTY(int endAngle READ getEndAngle WRITE setEndAngle CONSTANT)
+    Q_PROPERTY(int scaleMajor READ getScaleMajor WRITE setScaleMajor CONSTANT)
+    Q_PROPERTY(int scaleMinor READ getScaleMinor WRITE setScaleMinor CONSTANT)
+    Q_PROPERTY(int startAngle READ getStartAngle WRITE setStartAngle CONSTANT)
+    Q_PROPERTY(int endAngle READ getEndAngle WRITE setEndAngle CONSTANT)
 
-        Q_PROPERTY(bool animation READ getAnimation WRITE setAnimation CONSTANT)
-        Q_PROPERTY(double animationStep READ getAnimationStep WRITE setAnimationStep CONSTANT)
+    Q_PROPERTY(bool animation READ getAnimation WRITE setAnimation CONSTANT)
+    Q_PROPERTY(double animationStep READ getAnimationStep WRITE setAnimationStep CONSTANT)
 
-        Q_PROPERTY(QColor outerCircleColor READ getOuterCircleColor WRITE setOuterCircleColor CONSTANT)
-        Q_PROPERTY(QColor innerCircleColor READ getInnerCircleColor WRITE setInnerCircleColor CONSTANT)
+    Q_PROPERTY(QColor outerCircleColor READ getOuterCircleColor WRITE setOuterCircleColor CONSTANT)
+    Q_PROPERTY(QColor innerCircleColor READ getInnerCircleColor WRITE setInnerCircleColor CONSTANT)
 
-        Q_PROPERTY(QColor pieColorStart READ getPieColorStart WRITE setPieColorStart CONSTANT)
-        Q_PROPERTY(QColor pieColorMid READ getPieColorMid WRITE setPieColorMid CONSTANT)
-        Q_PROPERTY(QColor pieColorEnd READ getPieColorEnd WRITE setPieColorEnd CONSTANT)
+    Q_PROPERTY(QColor pieColorStart READ getPieColorStart WRITE setPieColorStart CONSTANT)
+    Q_PROPERTY(QColor pieColorMid READ getPieColorMid WRITE setPieColorMid CONSTANT)
+    Q_PROPERTY(QColor pieColorEnd READ getPieColorEnd WRITE setPieColorEnd CONSTANT)
 
-        Q_PROPERTY(QColor coverCircleColor READ getCoverCircleColor WRITE setCoverCircleColor CONSTANT)
-        Q_PROPERTY(QColor scaleColor READ getScaleColor WRITE setScaleColor CONSTANT)
-        Q_PROPERTY(QColor pointerColor READ getPointerColor WRITE setPointerColor CONSTANT)
-        Q_PROPERTY(QColor centerCircleColor READ getCenterCircleColor WRITE setCenterCircleColor CONSTANT)
-        Q_PROPERTY(QColor textColor READ getTextColor WRITE setTextColor CONSTANT)
+    Q_PROPERTY(QColor coverCircleColor READ getCoverCircleColor WRITE setCoverCircleColor CONSTANT)
+    Q_PROPERTY(QColor scaleColor READ getScaleColor WRITE setScaleColor CONSTANT)
+    Q_PROPERTY(QColor pointerColor READ getPointerColor WRITE setPointerColor CONSTANT)
+    Q_PROPERTY(QColor centerCircleColor READ getCenterCircleColor WRITE setCenterCircleColor CONSTANT)
+    Q_PROPERTY(QColor textColor READ getTextColor WRITE setTextColor CONSTANT)
 
-        Q_PROPERTY(bool showOverlay READ getShowOverlay WRITE setShowOverlay CONSTANT)
-        Q_PROPERTY(QColor overlayColor READ getOverlayColor WRITE setOverlayColor CONSTANT)
+    Q_PROPERTY(bool showOverlay READ getShowOverlay WRITE setShowOverlay CONSTANT)
+    Q_PROPERTY(QColor overlayColor READ getOverlayColor WRITE setOverlayColor CONSTANT)
 
-        Q_PROPERTY(PieStyle pieStyle READ getPieStyle WRITE setPieStyle CONSTANT)
-        Q_PROPERTY(PointerStyle pointerStyle READ getPointerStyle WRITE setPointerStyle CONSTANT)
+    Q_PROPERTY(PieStyle pieStyle READ getPieStyle WRITE setPieStyle CONSTANT)
+    Q_PROPERTY(PointerStyle pointerStyle READ getPointerStyle WRITE setPointerStyle CONSTANT)
 
 public:
     enum PieStyle {
@@ -168,9 +169,6 @@ public Q_SLOTS:
     //设置指针样式
     void setPointerStyle(const GaugeCar::PointerStyle &pointerStyle);
 
-Q_SIGNALS:
-    void valueChanged(int value);
-
 protected:
     void paintEvent(QPaintEvent* event);
     void drawOuterCircle(QPainter* painter);
@@ -187,9 +185,6 @@ protected:
     void drawCenterCircle(QPainter* painter);
     void drawValue(QPainter* painter);
     void drawOverlay(QPainter* painter);
-
-private slots:
-    //void updateValue();
 
 private:
     double minValue;                //最小值
@@ -229,5 +224,4 @@ private:
     double currentValue;            //当前值
     QTimer *timer;                  //定时器绘制动画
 };
-
 #endif // GAUGECAR_H
