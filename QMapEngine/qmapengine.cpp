@@ -1,7 +1,7 @@
 #include "qmapengine.h"
 
 QMapEngine::QMapEngine(QWidget *parent)
-    : QWidget{parent}
+    : QWidget(parent)
     , _mapPath("")
     , _center(QPointF())
     , _scaleratio(1.0)
@@ -77,32 +77,32 @@ void QMapEngine::setRotate(float rotate)
 
 QPointF QMapEngine::transfGeo2View(QPointF geo)
 {
-
+    return QPointF();
 }
 
 QPointF QMapEngine::transfView2Geo(QPointF view)
 {
-
+    return QPointF();
 }
 
 float QMapEngine::getAltitude()
 {
-
+    return 1.0;
 }
 
 float QMapEngine::getDistance(QPointF p1, QPointF p2)
 {
-
+    return 1.0;
 }
 
 float QMapEngine::getAngle(QPointF p1, QPointF p2)
 {
-
+    return 1.0;
 }
 
 float QMapEngine::getArea(QList<QPointF> ps)
 {
-
+    return 1.0;
 }
 
 void QMapEngine::setGridVisible(bool b)
@@ -127,7 +127,7 @@ void QMapEngine::removeLayer(QMapLayer *layer)
 
 QMapEngine::QMapLayer QMapEngine::findLayerByName(QString name)
 {
-
+    return QMapLayer();
 }
 
 QList<QMapEngine::QMapLayer> QMapEngine::getAllLayers()

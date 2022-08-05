@@ -11,11 +11,15 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    qmapengine.cpp
+    qmapengine.cpp \
+    mapgraphicsscene.cpp \
+    mapgraphicsobject.cpp
 
 HEADERS += \
     mainwindow.h \
-    qmapengine.h
+    qmapengine.h \
+    mapgraphicsscene.h \
+    mapgraphicsobject.h
 
 FORMS += \
     mainwindow.ui
