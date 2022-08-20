@@ -16,12 +16,17 @@ MapTileSource::MapTileSource()
 {
     this->setCacheMode(DiskAndMemCaching);
 
+    //We connect this signal/slot pair to communicate across threads.
     connect(this,
             SIGNAL(tileRequested(quint32,quint32,quint8)),
             this,
             SLOT(startTileRequest(quint32,quint32,quint8)),
             Qt::QueuedConnection);
 
+    /*
+      When all our tiles have been invalidated, we clear our temp cache so any misinformed clients
+      that don't notice will get a null tile instead of an old tile.
+    */
     connect(this,
             SIGNAL(allTilesInvalidated()),
             this,
@@ -36,6 +41,10 @@ MapTileSource::~MapTileSource()
 
 void MapTileSource::requestTile(quint32 x, quint32 y, quint8 z)
 {
+    /*We emit a signal to communicate across threads. MapTileSource (usually) runs in its own
+      thread, but this method will be called from a different thread (probably the GUI thread).
+      It's easy to communicate across threads with queued signals/slots.
+    */
     this->tileRequested(x,y,z);
 }
 
@@ -63,6 +72,7 @@ void MapTileSource::setCacheMode(CacheMode nMode)
 
 QString MapTileSource::createCacheID(quint32 x, quint32 y, quint8 z)
 {
+    //We use % because it's more efficient to concatenate with QStringBuilder
     QString toRet = QString::number(x) % "," % QString::number(y) % "," % QString::number(z);
     return toRet;
 }

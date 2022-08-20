@@ -147,7 +147,7 @@ Position Position::fromENU(const Position &refPos, const QVector3D &enu)
     return cPos;
 }
 
-//Non-member method for streaming to qDebug
+//让qDebug()支持此类
 QDebug operator<<(QDebug dbg, const Position& pos)
 {
     dbg.nospace() << "(" << QString::number(pos.longitude(),'g',10) << "," << QString::number(pos.latitude(),'g',10) << ")";

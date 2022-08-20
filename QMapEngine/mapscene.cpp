@@ -52,6 +52,10 @@ void MapScene::handleNewObjectGenerated(MapObject *newObject)
 
 void MapScene::handleObjectDestroyed(QObject *object)
 {
+    /*
+      We have to be careful with this casted pointer as technically at this point the MapGraphicsObject
+      portion of it has been destroyed. This signal comes from the QObject destructor.
+    */
     MapObject *mgObj = (MapObject*)object;
 
     this->removeObject(mgObj);

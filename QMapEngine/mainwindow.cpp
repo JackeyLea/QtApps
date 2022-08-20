@@ -21,14 +21,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Setup the MapGraphics scene and view
+    //创建地图场景和视图
     MapScene * scene = new MapScene(this);
     MapView * view = new MapView(scene,this);
 
-    //The view will be our central widget
+    //视图填充界面中心
     this->setCentralWidget(view);
 
-    //Setup some tile sources
+    //设置瓦片来源
     QSharedPointer<MapTileSourceOSM> osmTiles(new MapTileSourceOSM(MapTileSourceOSM::OSMTiles), &QObject::deleteLater);
     QSharedPointer<MapTileSourceGrid> gridTiles(new MapTileSourceGrid(), &QObject::deleteLater);
     QSharedPointer<MapTileSourceComposite> composite(new MapTileSourceComposite(), &QObject::deleteLater);
@@ -36,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     composite->addSourceTop(gridTiles);
     view->setTileSource(composite);
 
-    //Create a widget in the dock that lets us configure tile source layers
+    //创建界面来管理瓦片来源
     MapTileSourceConfigurationWidget * tileConfigWidget = new MapTileSourceConfigurationWidget(composite.toWeakRef(),
                                                                                          this->ui->dockWidget);
     this->ui->dockWidget->setWidget(tileConfigWidget);
@@ -48,8 +48,8 @@ MainWindow::MainWindow(QWidget *parent)
     view->setZoomLevel(12);
     view->centerOn(-112.202442, 40.9936234);
 
-    // Create a circle on the map to demonstrate MapGraphicsObject a bit
-    // The circle can be clicked/dragged around and should be ~5km in radius
+    // 在地图上绘制一个圆，用于演示MapObject
+    // 此圆可以点击、拖拽，半径为5km
     MapObject * circle = new MapObjectCircle(5000, false, QColor(255, 0, 0, 100));
     circle->setLatitude(40.9936234);
     circle->setLongitude(-112.202442);

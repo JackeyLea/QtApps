@@ -39,10 +39,35 @@ public:
 
     bool sizeIsZoomInvariant() const;
 
+    /*!
+     \brief You need to implement this. If sizeIsZoomInvariant() is true, this should return the size of the
+     rectangle you want in PIXELS. If false, this should return the size of the rectangle in METERS. The
+     rectangle should be centered at (0,0) regardless.
+
+     \return QRectF
+    */
     virtual QRectF boundingRect() const=0;
 
+    /*!
+     \brief You can reimplement this if you want. Given a point in geographic coordinates (lat/lon),
+     return true if the object contains that point. Return false otherwise. The default implementation just uses
+     boundingRect() to decide.
+
+     \param geoPos
+     \return bool
+    */
     virtual bool contains(const QPointF& geoPos) const;
 
+    /**
+     * @brief Paints the contents of the Object in ENU coordinates if the object is not zoom invariant.
+     * If it is zoom invariant, the units are pixels. That is, this painter should operate in the same
+     * units as returned by boundingRect().
+     * You must implement this.
+     *
+     * @param painter
+     * @param option
+     * @param widget
+     */
     virtual void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget=0)=0;
 
     bool enabled() const;
@@ -105,12 +130,19 @@ signals:
 
     void flagsChanged();
 
+    //Please do not use this for now. It should only be used internally for now. Ugly, I know.
     void selectedChanged();
 
     void newObjectGenerated(MapObject *);
 
+    /*!
+     \brief Emitted when we'd like to be redrawn
+    */
     void redrawRequested();
 
+    /*!
+     \brief Emitted when this MapGraphicsObject wants keyboard focus. (to receive keyboard events)
+    */
     void keyFocusRequested();
 
 private slots:

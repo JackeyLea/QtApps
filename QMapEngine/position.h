@@ -52,7 +52,7 @@ private:
     qreal _altitude;
 };
 
-//Non-member method for streaming to qDebug
+//让qDebug()支持此类
 QDebug operator<<(QDebug dbg, const Position& pos);
 
 //Non-member methods for serializing and de-serializing
