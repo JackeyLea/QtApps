@@ -1,0 +1,305 @@
+/*自定义样式表*/
+QWidget#centralWidget{
+       border-style:solid;
+	   background: transparent;
+	   background-color:#DEB887;
+}
+ 
+QPushButton#pushButton{
+       background-color:#F08080;
+}
+ 
+QPushButton#pushButton_2{
+       background-color:#FF8C00;
+	   border-radius: 10px; 
+}
+ 
+QPushButton#pushButton_3{
+       background-color:#4169E1;
+}
+ 
+QPushButton#pushButton_1{
+       border-radius: 10px; 
+	   border: 2px groove gray;
+	   border-style: outset;
+}
+QWidget#centralWidget{
+       border-style:solid;
+	   background: transparent;
+	   background-color:#B8B8B8;
+	   
+}
+ 
+QListWidget#listWidget{
+      background:rgba(210,240,250,255);
+	  color:#00CCFF;border:0px solid gray;
+      padding:0px -2px 5px 5px;
+}
+                                 
+QListWidget::item{
+    width:94px;
+    height:35px;
+    border:0px solid gray;
+    padding-left:8px;
+}
+
+QListWidget::item:!selected{
+    background:#000000;
+    color: #ffcc00;
+    border-width:1;
+}
+
+QListWidget::item:selected:active{
+    background:#FFFFFF;
+    color:#00CCFF;
+    border-width:-1;
+}
+
+QListWidget::item:selected{
+    background:#FFFFFF;
+    color:#00CCFF;
+}
+
+QWidget#centralWidget{
+       border-style:solid;
+	   background: transparent;
+	   background-color:#B8B8B8; 
+}
+ 
+QComboBox#comboBox{
+      color:#00CCFF;
+	  border: 1px solid gray;
+      border-radius: 3px;
+	  height: 25px; 
+	  padding: 1px 2px 1px 2px;  #针对于组合框中的文本内容
+	  subcontrol-origin: padding;
+      subcontrol-position: top right;
+      width: 20px;
+      color:#00CCFF;
+	  border:0px solid gray;
+	  border:1px solid #d7d7d7; 
+	  border-radius: 3px; 
+	  padding: 1px 18px 1px 3px;   
+	  QComboBox:editable{ background: white; };  
+      QComboBox:!editable{ background: #fbfbfb; color:#666666};
+      QComboBox::drop-down{ subcontrol-origin: padding;}; 
+      subcontrol-position: top right;
+      width: 22px; 
+	  border-left-width: 1px;
+      border-left-color: #c9c9c9;
+      border-left-style: solid; /* just a single line */
+      border-top-right-radius: 3px; /* same radius as the QComboBox */
+      border-bottom-right-radius: 3px; 
+	  
+      QComboBox::down-arrow:on { /* shift the arrow when popup is open */ top: 1px; left: 1px;} ;
+  	  QComboBox{font-size: 11px} ;
+      QComboBox:!selected{color: red};
+      QComboBox:selected:active{background-color: orange }; 
+	  QComboBox:selected{color: orange}; 
+}
+
+QWidget#centralWidget{
+       border-style:solid;
+	   background: transparent;
+	   background-color:#B8B8B8;
+}
+ 
+QProgressBar#progressBar{
+      border:none;
+      background:#696969;
+      border-radius:5px;
+      text-align:center;
+}
+ 
+QProgressBar::chunk {
+      background-color:rgb(58, 154, 255);
+      border-radius:4px;
+}
+QLinlineEdit::lineEdit{
+      enabled{color:#1964F};
+	  disabled{color:orange};
+	  border:1px solid gray;
+	  border-radius:5px;
+	  padding:0px 10px 0px 20px;
+	  background:yellow;
+	  selection-background-color: darkgary;
+	  background-image:url(:qss/Skin/black/tools/edit.png);
+}
+
+QScrollBar#verticalScrollBar:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    padding-top:16px;   
+    padding-bottom:16px;
+}
+ 
+QScrollBar#verticalScrollBar::handle:vertical
+{
+    width:8px;
+    background:rgba(0,0,0,25%);
+    border-radius:4px;   
+    min-height:20;
+}
+ 
+QScrollBar#verticalScrollBar::handle:vertical:hover
+{
+    width:8px;
+    background:rgba(0,0,0,50%); 
+    border-radius:4px;
+    min-height:20;
+}
+ 
+QScrollBar#verticalScrollBar::add-line:vertical   
+{
+    height:16px;width:16px;
+    border-image:url(:qss/Skin/black/tools/appbar.menu.hover.png);
+    subcontrol-position:bottom;
+}
+
+QScrollBar#verticalScrollBar::sub-line:vertical   
+{
+    height:16px;width:16px;
+    border-image:url(:qss/Skin/black/tools/appbar.menu.put.hover.png);
+    subcontrol-position:top;
+}
+
+QScrollBar#verticalScrollBar::add-line:vertical:hover   
+{
+    height:16px;width:16px;
+    border-image:url(:qss/Skin/black/tools/appbar.menu.down.png);
+    subcontrol-position:bottom;
+}
+
+QScrollBar#verticalScrollBar::sub-line:vertical:hover 
+{
+    height:16px;width:16px;
+    border-image:url(:qss/Skin/black/tools/appbar.menu.put.down.png);
+    subcontrol-position:top;
+}
+ 
+QScrollBar#verticalScrollBar::add-page:vertical,QScrollBar#verticalScrollBar::sub-page:vertical  
+{
+    border-style:solid;
+    background:white;
+    border-radius:4px;
+}
+
+QWidget#centralWidget{
+    border-style:solid;
+	background: transparent;
+	background-color:#0066CC;   
+}
+ 
+QSlider#horizontalSlider::groove:horizontal {  
+    border: 1px solid #4A708B;  
+    background: #orange;  
+    height: 5px;  
+    border-radius: 1px;  
+    padding-left:-1px;  
+    padding-right:-1px;  
+}  
+  
+QSlider#horizontalSlider::sub-page:horizontal {  
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,   
+                                stop:0 #B1B1B1, stop:1 #c4c4c4);  
+    background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,  
+                                stop: 0 #5DCCFF, stop: 1 #1874CD);  
+    border: 1px solid #4A708B;  
+    height: 10px;  
+    border-radius: 2px;  
+}  
+  
+QSlider#horizontalSlider::add-page:horizontal {  
+    background: #575757;  
+    border: 0px solid #777;  
+    height: 10px;  
+    border-radius: 2px;  
+}  
+  
+QSlider#horizontalSlider::handle:horizontal   
+{  
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,   
+    stop:0.6 #45ADED, stop:0.778409 rgba(255, 255, 255, 255));  
+    width: 11px;  
+    margin-top: -3px;  
+    margin-bottom: -3px;  
+    border-radius: 5px;  
+}  
+  
+QSlider#horizontalSlider::handle:horizontal:hover {  
+    background: qradialgradient(spread:pad, 
+    cx:0.5, cy:0.5, 
+    radius:0.5, 
+    fx:0.5, fy:0.5, 
+    stop:0.6 #2A8BDA,   
+    stop:0.778409 rgba(255, 255, 255, 255));  
+  
+    width: 11px;  
+    margin-top: -3px;  
+    margin-bottom: -3px;  
+    border-radius: 5px;  
+}  
+  
+QSlider#horizontalSlider::sub-page:horizontal:disabled {  
+    background: #00009C;  
+    border-color: #999;  
+}  
+  
+QSlider#horizontalSlider::add-page:horizontal:disabled {  
+    background: #eee;  
+    border-color: #999;  
+}  
+  
+QSlider#horizontalSlider::handle:horizontal:disabled {
+    background: #eee;  
+    border: 1px solid #aaa;  
+    border-radius: 4px;  
+}  
+
+QWidget#centralWidget{
+       border-style:solid;
+	   background: transparent;
+	   background-color:#2F4F4F;   
+}
+
+QtableWidget#tableWidget:pane{
+       background:  transparent; 
+       background-color:#FFE4B5;
+}
+
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 0.5px solid #C4C4C3;
+    border-bottom-color: #C2C7CB;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    min-width: 8ex;
+    padding: 2px;
+	color:white;
+}
+ 
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+ 
+ QTabBar::tab:!selected {
+    border-color: black;
+	border-style:solid;
+	background: transparent;
+    border-bottom-color: red;
+	background-image: url(:qss/Skin/black/tools/tab-image-pressed.png); 
+}
+ 
+ QTabBar::tab:selected {
+    border-style:solid;
+    border-color: black;
+	background: transparent;
+    border-bottom-color: red;
+	background-image: url(:qss/Skin/black/tools/tab-image.png); 
+}
