@@ -12,4 +12,4 @@
 | Seagull | C++ | 多线程下载器 | 
 | stardicter | c++ | stardict解析| 
 | QCWidget | QWidget | 仿Qt自定义控件 | 
-|
+| QtHelp | QWidget | Qt专用帮助文档生成工具
