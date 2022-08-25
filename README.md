@@ -4,6 +4,7 @@
 
 | 项目名 | 类型 | 功能 | 开发教程 |备注 |
 | - | - | - | - | - | 
+| BlackWidow | QWidget | 基于Qt的Online Judge爬虫
 | Dot_matrix_font | QWidget | Linux下点阵字符生成软件 | 
 | Encrypt | QWidget | RSA解密解析 |
 | HandWriting | QWidget | 手写字符识别 |  
