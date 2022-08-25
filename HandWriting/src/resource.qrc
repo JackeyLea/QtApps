@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/themes/light.qss</file>
+        <file>resources/themes/gray.qss</file>
+        <file>resources/themes/darkblack.qss</file>
+        <file>resources/icons/warning.svg</file>
+        <file>resources/icons/user.jpg</file>
+        <file>resources/icons/tip.svg</file>
+        <file>resources/icons/save.svg</file>
+        <file>resources/icons/qt.png</file>
+        <file>resources/icons/pen.svg</file>
+        <file>resources/icons/pen.ico</file>
+        <file>resources/icons/go.svg</file>
+        <file>resources/icons/github.svg</file>
+        <file>resources/icons/exit.svg</file>
+        <file>resources/icons/close.svg</file>
+        <file>resources/icons/clear.svg</file>
+        <file>resources/icons/about.svg</file>
+    </qresource>
+</RCC>

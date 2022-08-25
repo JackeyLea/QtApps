@@ -6,6 +6,7 @@
 | - | - | - | - | - | 
 | Dot_matrix_font | QWidget | Linux下点阵字符生成软件 | 
 | Encrypt | QWidget | RSA解密解析 |
+| HandWriting | QWidget | 手写字符识别 |  
 | mkboot | C++ | 将软盘镜像IMG设置为可启动 |
 | parrot | C++ | 单词词库 |
 | pcmwave | QWidget | 显示音频波纹 |
