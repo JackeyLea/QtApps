@@ -9,6 +9,7 @@
 | parrot | C++ | 单词词库 |
 | pcmwave | QWidget | 显示音频波纹 |
 | pcmwave2 | QWT | 测试Qt/QWT的显示绘图能力 |
+| Seagull | C++ | 多线程下载器 | 
 | stardicter | c++ | stardict解析| 
 | QCWidget | QWidget | 仿Qt自定义控件 | 
 |
