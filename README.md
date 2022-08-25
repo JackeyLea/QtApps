@@ -4,6 +4,7 @@
 
 | 项目名 | 类型 | 功能 | 开发教程 |备注 |
 | - | - | - | - | - | 
+| Dot_matrix_font | QWidget | Linux下点阵字符生成软件 | 
 | Encrypt | QWidget | RSA解密解析 |
 | mkboot | C++ | 将软盘镜像IMG设置为可启动 |
 | parrot | C++ | 单词词库 |
