@@ -95,5 +95,5 @@ void MapScenePrivate::setMapGraphicsScene(MapScene *mgScene)
     connect(_mgScene.data(),
             SIGNAL(objectRemoved(MapObject*)),
             this,
-            SLOT(handleMGObjectRemoved(MapGObject*)));
+            SLOT(handleMGObjectRemoved(MapObject*)));
 }

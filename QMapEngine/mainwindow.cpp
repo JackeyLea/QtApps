@@ -5,6 +5,7 @@
 #include "mapscene.h"
 #include "maptilesourcegrid.h"
 #include "maptilesourceosm.h"
+#include "maptilesourceamap.h"
 #include "maptilesourcecomposite.h"
 #include "maptilesourceconfigurationwidget.h"
 #include "mapobjectcircle.h"
@@ -30,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //设置瓦片来源
     QSharedPointer<MapTileSourceOSM> osmTiles(new MapTileSourceOSM(MapTileSourceOSM::OSMTiles), &QObject::deleteLater);
+    QSharedPointer<MapTileSourceAMap> amapTiles(new MapTileSourceAMap(),&QObject::deleteLater);
     QSharedPointer<MapTileSourceGrid> gridTiles(new MapTileSourceGrid(), &QObject::deleteLater);
     QSharedPointer<MapTileSourceComposite> composite(new MapTileSourceComposite(), &QObject::deleteLater);
     composite->addSourceBottom(osmTiles);
