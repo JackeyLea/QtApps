@@ -17,3 +17,4 @@
 | stardicter | c++ | stardict解析| 
 | QCWidget | QWidget | 仿Qt自定义控件 | 
 | QtHelp | QWidget | Qt专用帮助文档生成工具
+| watermark | QWidget | 盲水印添加工具 | 
