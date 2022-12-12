@@ -9,7 +9,6 @@
 | Encrypt | QWidget | RSA解密解析 |
 | HandWriting | QWidget | 手写字符识别 |  
 | MindViewer | QWidget | 神念科技TGAM模块图形工具
-| parrot | C++ | 单词词库 |
 | pcmwave | QWidget | 显示音频波纹 |
 | pcmwave2 | QWT | 测试Qt/QWT的显示绘图能力 |
 | Seagull | C++ | 多线程下载器 | 
