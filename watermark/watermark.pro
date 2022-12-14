@@ -23,9 +23,11 @@ unix{
 
 SOURCES += \
     main.cpp \
+    normalwatermark.cpp \
     widget.cpp
 
 HEADERS += \
+    normalwatermark.h \
     widget.h
 
 FORMS += \
