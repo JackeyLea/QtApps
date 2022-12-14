@@ -15,7 +15,14 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+private slots:
+    void on_btnNormalOpen_clicked();
+
 private:
     Ui::Widget *ui;
+
+    QStringList m_imgPath;
+    uint32_t m_imgCnt=0;
+    uint32_t m_curIndex=0;
 };
 #endif // WIDGET_H
