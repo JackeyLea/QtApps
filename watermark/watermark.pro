@@ -22,11 +22,13 @@ unix{
 }
 
 SOURCES += \
+    blindwatermark.cpp \
     main.cpp \
     normalwatermark.cpp \
     widget.cpp
 
 HEADERS += \
+    blindwatermark.h \
     normalwatermark.h \
     widget.h
 
