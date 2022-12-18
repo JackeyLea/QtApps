@@ -70,6 +70,7 @@ QImage NormalWatermark::result()
     QFont font;
     font.setPointSize(_mPointSize);//字体大小
     QPen pen;
+    _mColor.setAlpha(50);
     pen.setColor(_mColor);
 
     //如果待处理图片为空
@@ -86,6 +87,7 @@ QImage NormalWatermark::result()
     if(_mFrameVisible){
         painter.drawRect(rect);
     }
+    painter.rotate(45);
     painter.drawText(_mPosX,_mPosY,_mPosW,_mPosH,Qt::AlignCenter,_mWatermarkCtx);
 
     return tmpImg;
